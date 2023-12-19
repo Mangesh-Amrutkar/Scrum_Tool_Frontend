@@ -1,0 +1,512 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #fefeff; /* Blue background color */
+    padding: 10px 0px; /* Adjust as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for the entire navbar */
+    color: rgb(76, 110, 243); /* Text color */
+    /* overflow-x: auto; Enable horizontal scrolling if necessary */
+    white-space: nowrap;
+  }
+  
+  .navbar > * {
+    margin-right: 20px;
+    flex-shrink: 0; /* Spacing between elements; adjust as needed */
+  }
+  
+  .logo {
+    width: 100px; /* Adjust the size of the logos as needed */
+    height: 30px;
+    margin-right: 10px; /* Adjust the spacing between logos and other elements */
+    /* border-radius: 50%; Make logos circular if needed */
+  }
+  
+  /* Styling for the dropdown container */
+  .stylish-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Styling for the dropdown button */
+  .stylish-dropbtn {
+    background-color: #f5f6f7;
+    color: rgb(65, 56, 243);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+   /* Smooth hover effect */
+  }
+  
+  .stylish-dropbtn:hover {
+    background-color: #0c368c;
+    color: white; /* Darker shade on hover */
+  }
+  
+  /* Styling for the dropdown content */
+  .stylish-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .stylish-dropdown-content a {
+    color: #892222; /* Font color */
+    padding: 12px 16px; /* Padding for spacing */
+    text-decoration: none;
+    display: block;
+    font-size: 16px; /* Font size */
+    font-family: 'YourFontStyle', sans-serif; /* Custom font style */
+    transition: background-color 0.3s;
+  }
+  
+  .stylish-dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown content when hovering over the dropdown button */
+  .stylish-dropdown:hover .stylish-dropdown-content {
+    display: block;
+  }
+  
+  /* Target the "Your Project" dropdown */
+  .your-project-dropdown {
+    /* Adjust the width to your desired size */
+    width: 180px; /* Adjust this width as needed */
+    /* Ensure text doesn't wrap to the next line */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Display ellipsis (...) for long text */
+  }
+  
+  
+  
+  
+  
+  
+  .create-button {
+    background-color: #2196f3; /* Blue button color */
+    color: rgb(245, 246, 248);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Styling for the "Create Issue" pop-up container */
+  .create-issue-popup-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styling for the pop-up content */
+  .popup-content.create-issue-popup-content {
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    position: relative; /* Added for centering */
+  }
+  
+  /* Styling for the close button */
+  .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Style for the "Create" button */
+  
+  
+  /* Style for the "Create" button hover state (optional) */
+  .create-button:hover {
+    background-color: #1565c0;
+  }
+  
+  
+  .search-bar {
+    flex: 1;
+    background-color: white; /* White background for the search bar */
+    border-radius: 4px;
+    padding: 5px;
+  }
+  
+  .icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  
+  }
+  
+  .right-icon {
+    width: 30px; /* Adjust the size of the logos as needed */
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 20px;
+  }
+  
+  
+  
+  
+  
+   /* sidebar ---------------> */
+  
+   .dashboard {
+    display: flex;
+    align-items: center;
+  }
+  
+   .sidebar {
+    position: fixed;
+    top: 92px; /* Adjust for the height of the navigation bar */
+    left: 8;
+    width: 200px; /* Adjust as needed for a wider sidebar */
+    height: calc(100% - 60px);  
+    background-color: #dce2e8; /* Different shade of blue */
+    color: white;
+    font-family: Arial, sans-serif; /* Use a suitable font */
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    font-family: 'YourCustomFont', sans-serif;
+    align-items: flex-start;
+    padding: 10px; /* Adjust for internal spacing */
+  }
+  
+  .sidebar-item {
+    padding: 10px 0; /* Adjust for spacing between items */
+    cursor: pointer;
+    align-items: center;
+    /* margin: 10px 0; */
+  }
+  
+  .entity-symbol {
+    width: 24px; /* Adjust the width as needed */
+    height: 24px; /* Adjust the height as needed */
+    margin-right: 10px; /* Adjust the margin as needed to create space between the symbol and the text */
+  }
+  
+  /* Styling for the symbols/images and entity names of the custom entities */
+  .sidebar-itemeut {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    padding: 0px 0; /* Adjust for spacing between items */
+    cursor: pointer;
+    align-items: center;
+    /* margin: 10px 0; */
+  }
+  .custom-entity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .custom-entity:hover {
+    color: #1565c0;
+    transition: color 0.3s;
+  }
+  
+  
+  .sidebar-item a{
+    text-decoration: none;
+    color: rgb(83, 95, 228);
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+  }
+  .sidebar-item a:hover {
+    color: #1565c0;
+    transition: color 0.3s;
+  }
+  
+  .project-name {
+    padding: 20px; /* Adjust as needed for spacing */
+    text-align: center;
+  }
+  
+  .project-name h1 {
+    font-family: 'YourAttractiveFont', sans-serif; /* Use your preferred attractive font */
+    font-size: 24px; /* Adjust as needed for the font size */
+    color: #4c0dea; /* Choose an attractive color */
+    margin: 0; /* Remove default margins */
+  }
+  
+  
+  /* Add hover and active styles as needed */
+  
+  /* Styling for the pop-up container */
+  
+  
+  /* Style for the "Create" button */
+  .create-button {
+    /* Your existing create button styles */
+    cursor: pointer;
+  }
+  
+  /* Style for the "Create" button hover state (optional) */
+  
+  
+  
+  
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-top: 10px;
+  }
+  
+  select, input, textarea {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Style for the Cancel and Create buttons */
+  .cancel-button {
+    background-color: #ddd;
+  }
+  
+  .create-button {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .create-button:hover {
+    background-color: #1565c0;
+  }
+  
+  
+  
+  
+  .dashboardImg {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-self:center;
+    justify-content: center;
+    padding-top: 100px;
+  }
+  
+  
+  
+  
+  /* Styling for the buttons */
+  .sidebar-button {
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    background-color: #dce2e8; /* Background color */
+    color: #101b35; /* Text color */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Align text to the left */
+  
+    /* Hover effect */
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar-button:hover {
+    background-color: #0056b3;
+    color: white; /* Hover background color */
+  }
+  
+  
+  /* Styling for the "Create Epic" pop-up container */
+  .epic-popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .epic-form-content {
+    background: #fff;
+    border-radius: 5px;
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    
+  }
+  
+  .epic-popup-container .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .epic-popup-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .epic-popup-container form {
+    /* Form styling goes here */
+  }
+  
+  /* Additional styling for form elements, buttons, etc. */
+  
+  .user-stories-popup-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styling for the pop-up content */
+  .popup-content {
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    position: relative; /* Added for centering */
+  }
+  
+  /* Styling for the close button */
+  .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Style for the "Create" button */
+  .create-button {
+    /* Your existing create button styles */
+    cursor: pointer;
+  }
+  
+  /* Style for the "Create" button hover state (optional) */
+  .create-button:hover {
+    background-color: #1565c0;
+  }
+  
+  /* Styling for the "Create Task" pop-up container */
+  .task-popup-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styling for the pop-up content */
+  .popup-content.task-popup-content {
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    position: relative; /* Added for centering */
+  }
+  
+  /* Styling for the close button */
+  .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Style for the "Create" button */
+  .create-button {
+    /* Your existing create button styles */
+    cursor: pointer;
+  }
+  
+  /* Style for the "Create" button hover state (optional) */
+  .create-button:hover {
+    background-color: #1565c0;
+  }
+  
+  .loginbutton{
+    cursor: pointer;
+  }
+
+  .loginbutton:hover {
+    background-color: #1565c0;
+  }
+
+  .loginbutton {
+    background-color: #2196f3; /* Blue button color */
+    color: rgb(245, 246, 248);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }

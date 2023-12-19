@@ -1,0 +1,203 @@
+<nav class="navbar">
+    <img src="https://sarvashikshan.com/wp-content/uploads/2023/10/SarvaShikshan-Logo.png" alt="CLogo" class="logo">
+    <div class="dropdown stylish-dropdown">
+      <button class="dropbtn stylish-dropbtn">Your Project</button>
+      <div class="dropdown-content stylish-dropdown-content">
+        <a href="#">Project 1</a>
+        <a href="#">Project 2</a>
+        <a href="#">Project 3</a>
+        <!-- Add more project options as needed -->
+      </div>
+    </div>
+  
+    <div class="dropdown stylish-dropdown">
+      <button class="dropbtn stylish-dropbtn">Filters</button>
+      <div class="dropdown-content stylish-dropdown-content">
+        <a href="#">Filter 1</a>
+        <a href="#">Filter 2</a>
+        <a href="#">Filter 3</a>
+        <!-- Add more filter options as needed -->
+      </div>
+    </div>
+  
+    <div class="dropdown stylish-dropdown">
+      <button class="dropbtn stylish-dropbtn">Dashboards</button>
+      <div class="dropdown-content stylish-dropdown-content">
+        <a href="#">Dashboard 1</a>
+        <a href="#">Dashboard 2</a>
+        <a href="#">Dashboard 3</a>
+        <!-- Add more dashboard options as needed -->
+      </div>
+    </div>
+  
+    <div class="dropdown stylish-dropdown">
+      <button class="dropbtn stylish-dropbtn">Teams</button>
+      <div class="dropdown-content stylish-dropdown-content">
+        <a href="#">Team 1</a>
+        <a href="#">Team 2</a>
+        <a href="#">Team 3</a>
+        <!-- Add more team options as needed -->
+      </div>
+    </div>
+    <button class="create-button" (click)="showCreateIssueForm()" >Create</button>
+    
+    <div class="search-bar">
+      <input type="text" placeholder="Search" />
+    </div>
+    <div>
+    <img src="../assets/Images/NotiSymbol.png" alt="Notification" class="right-icon">
+    <img src="../assets/Images/HelpSymbol.png" alt="Help" class="right-icon">
+    <img src="../assets/Images/SettingSymbol.png" alt="Setting" class="right-icon">
+    </div>
+  </nav>
+  <div class="dashboard">
+  <div class="sidebar">
+    <div class="project-name">
+      <h1>Your Project Name</h1>
+    </div>
+    <div class="sidebar-item">
+      <a href="#">Timeline</a>
+    </div>
+    <div class="sidebar-item">
+      <a href="#">Backlog</a>
+    </div>
+    <div class="sidebar-item">
+      <a href="#">Board</a>
+    </div>
+    <div class="sidebar-item">
+      <a href="#">Add View</a>
+    </div>
+    <div class="sidebar-itemeut">
+      <img
+        src="../assets/Images/EpicSymbol.png"
+        alt="Epic Symbol"
+        class="entity-symbol"
+      />
+      <button class="sidebar-button" (click)="showCreateEpicForm()">Epic</button>
+    </div>
+  
+    <div class="sidebar-itemeut">
+      <img
+        src="../assets/Images/UserStoriesSymbol.png"
+        alt="User Stories Symbol"
+        class="entity-symbol"
+      />
+      <button class="sidebar-button"  (click)="showCreateUserStoriesForm()">User Stories</button>
+    </div>
+  
+    <div class="sidebar-itemeut">
+      <img
+        src="../assets/Images/TaskSymbol.png"
+        alt="Tasks Symbol"
+        class="entity-symbol"
+      />
+      <button class="sidebar-button" (click)="showCreateTaskForm()">Tasks</button>
+    </div>
+  </div>
+  <div class="dashboardImg">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDNoJGDygrxSm78crFk2kOqXOfnUFFR5d8vkSnUSpr4_-y_sf14mcH4p6rIde1Z1qRUZA&usqp=CAU" alt="" height="300px" width="350px">
+  
+  </div>
+  
+  </div>
+  
+  <!-- "Create Issue" Form -->
+  <div class="create-issue-popup-container" *ngIf="showCreateIssuePopup">
+    <div class="popup-content create-issue-popup-content">
+      <span id="closeCreateIssueForm" class="close-popup" (click)="closeCreateIssueForm()">×</span>
+      <h2>Create Issue</h2>
+      <form (submit)="submitIssueForm()">
+        <label for="project">Project:</label>
+        <select id="project" name="project">
+          <option value="project1">Project 1</option>
+          <option value="project2">Project 2</option>
+          <option value="project3">Project 3</option>
+        </select>
+  
+        <label for="issue">Issue:</label>
+        <select id="issue" name="issue">
+          <option value="issue1">Issue 1</option>
+          <option value="issue2">Issue 2</option>
+          <option value="issue3">Issue 3</option>
+        </select>
+  
+        <label for="issueSummary">Summary:</label>
+        <input type="text" id="issueSummary" name="issueSummary" required>
+  
+        <label for="issueDescription">Description:</label>
+        <textarea id="issueDescription" name="issueDescription" rows="4"></textarea>
+  
+        <div class="button-container">
+          <button class="cancel-button" type="button" (click)="closeCreateIssueForm()">Cancel</button>
+          <button class="create-button" type="submit">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="epic-popup-container" *ngIf="showCreateEpicPopup">
+    <div class="epic-form-content">
+      <span id="closeEpicForm" class="close-popup" (click)="closeCreateEpicForm()"
+        >×</span
+      >
+      <h2>Create Epic</h2>
+      <form (submit)="submitEpicForm()">
+        <label for="epicSummary">Summary:</label>
+        <input type="text" id="epicSummary" name="epicSummary" required />
+  
+        <label for="epicDescription">Description:</label>
+        <textarea id="epicDescription" name="epicDescription" rows="4"></textarea>
+  
+        <div class="button-container">
+          <button
+            class="cancel-button"
+            type="button"
+            (click)="closeCreateEpicForm()"
+          >
+            Cancel
+          </button>
+          <button class="create-button" type="submit">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="user-stories-popup-container" *ngIf="showCreateUserStoriesPopup">
+    <div class="popup-content">
+      <span id="closeUserStoriesForm" class="close-popup" (click)="closeCreateUserStoriesForm()">×</span>
+      <h2>Create User Stories</h2>
+      <form (submit)="submitUserStoriesForm()">
+        <label for="userStoriesSummary">Summary:</label>
+        <input type="text" id="userStoriesSummary" name="userStoriesSummary" required>
+  
+        <label for="userStoriesDescription">Description:</label>
+        <textarea id="userStoriesDescription" name="userStoriesDescription" rows="4"></textarea>
+  
+        <div class="button-container">
+          <button class="cancel-button" type="button" (click)="closeCreateUserStoriesForm()">Cancel</button>
+          <button class="create-button" type="submit">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- "Create Task" Form -->
+  <div class="task-popup-container" *ngIf="showCreateTaskPopup">
+    <div class="popup-content task-popup-content">
+      <span id="closeTaskForm" class="close-popup" (click)="closeCreateTaskForm()">×</span>
+      <h2>Create Task</h2>
+      <form (submit)="submitTaskForm()">
+        <label for="taskSummary">Summary:</label>
+        <input type="text" id="taskSummary" name="taskSummary" required>
+  
+        <label for="taskDescription">Description:</label>
+        <textarea id="taskDescription" name="taskDescription" rows="4"></textarea>
+  
+        <div class="button-container">
+          <button class="cancel-button" type="button" (click)="closeCreateTaskForm()">Cancel</button>
+          <button class="create-button" type="submit">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
